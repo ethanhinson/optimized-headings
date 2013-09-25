@@ -130,7 +130,7 @@ class OptimizedHeadings {
                 $display_title = '';
                 //Logic for determining what the Display Title should be
                 //If we are on a page and not in the admin area
-                if( $id && $post->post_type == 'page' && !is_admin( ) ) {
+                if( $id && $post->post_type == 'page' && !is_admin( ) && in_the_loop() ) {
                         //If it is not empty then we will set the $title var to the field
                         $display_title = get_post_meta($id, 'optimized_heading_display_title', true);
                         if( $display_title != '') {
